@@ -34,3 +34,9 @@ font-weight: 700;
 font-size: 14px;
 align-self: flex-start;
 `;
+
+export const PriceQuantityWrap = styled.div`
+display: flex;
+justify-content: space-between;
+width: 100%;
+`;

@@ -4,7 +4,7 @@ import { HeaderStyled, LogoWrap, MainTitle, NavStyled, StyledNavLink } from "./H
 export const Header = () => {
     return (
         <Section>
-            <Container $bottom='0px'>
+            <Container>
                 <HeaderStyled>
                     <LogoWrap>
                         <MainTitle>Medicine Delivery app</MainTitle>

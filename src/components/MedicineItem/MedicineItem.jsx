@@ -1,12 +1,12 @@
 import { Button } from "components/PharmacyList/PharmacyList.styled";
-import { DescriptionWrap, Img, MedicineItemStyle, Price } from "./MedicineItem.styled";
+import { DescriptionWrap, Img, MedicineItemStyle, Price, PriceQuantityWrap } from "./MedicineItem.styled";
 import { addShoppingCart, deleteShoppingCart } from "../../redux/shoppingCart/shoppingCartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { selectBasket } from "../../redux/selectors";
 
 
-export const MedicineItem = ({ drug }) => {
+export const MedicineItem = ({ drug, children }) => {
     const dispatch = useDispatch();
         const inBasket = useSelector(selectBasket);
 
@@ -20,7 +20,8 @@ export const MedicineItem = ({ drug }) => {
     }, [inBasket, id]);
 
     const onClickCard = () => {
-        inCart ? dispatch(deleteShoppingCart(id)) : dispatch(addShoppingCart(drug))
+        const newDrugObj = Object.assign({ quantity: 1 }, drug);
+        inCart ? dispatch(deleteShoppingCart(id)) : dispatch(addShoppingCart(newDrugObj))
         setInCart(!inCart);
     };
 
@@ -34,7 +35,10 @@ export const MedicineItem = ({ drug }) => {
                 <h3>{medicine}</h3>
                 <p>{description}</p>
             </DescriptionWrap>
+            <PriceQuantityWrap>
                 <Price>{price}</Price>
+                            {children}
+            </PriceQuantityWrap>
             <Button onClick={onClickCard}>{inCart ? 'Delete from Cart' : 'Add to Cart'}</Button>
                     </MedicineItemStyle>
     )

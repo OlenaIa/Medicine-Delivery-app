@@ -9,7 +9,12 @@ export const MedicineBlock = styled.section`
 
 export const MedicineListStyled = styled.ul`
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 24px;
+    padding: 12px;
     flex-wrap: wrap;
+    height: 372px;
+    overflow-y: auto;
+    border: 1px solid var(--color-button-hover);
+    border-radius: 14px;
 `;
