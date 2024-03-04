@@ -66,6 +66,8 @@ npm start
   scoped styles.
 - [MockAPI](https://mockapi.io/): A platform for creating mock APIs, utilized as
   the database for fetching and storing application data.
+- GitHub Pages: Used for hosting the Medicine Delivery app, accessible at
+  [https://olenaia.github.io/Medicine-Delivery-app/](https://olenaia.github.io/Medicine-Delivery-app/).
 
 ## Contributor
 
