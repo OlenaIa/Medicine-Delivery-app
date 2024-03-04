@@ -27,12 +27,8 @@ export const LogoWrap = styled.div`
 `;
 
 export const MainTitle = styled.h1`
-  font-size: 16px;
+  font-size: 20px;
   color: var(--color-button);
-
-  @media screen and (min-width: 768px) {
-    font-size: 20px;
-  }
 `;
 
 export const NavStyled = styled.nav`

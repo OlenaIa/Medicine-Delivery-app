@@ -36,7 +36,7 @@ export const MedicineItem = ({ drug, children }) => {
                 <p>{description}</p>
             </DescriptionWrap>
             <PriceQuantityWrap>
-                <Price>{price}</Price>
+                <Price>{price} €</Price>
                             {children}
             </PriceQuantityWrap>
             <Button onClick={onClickCard}>{inCart ? 'Delete from Cart' : 'Add to Cart'}</Button>

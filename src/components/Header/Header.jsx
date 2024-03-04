@@ -10,9 +10,8 @@ export const Header = () => {
                         <MainTitle>Medicine Delivery app</MainTitle>
                     </LogoWrap>
                     <NavStyled>
-                        <StyledNavLink to="/">Home</StyledNavLink>
-                        <StyledNavLink to="/catalog">Catalog</StyledNavLink>
-                        <StyledNavLink to="/favorites">Favorites</StyledNavLink>
+                        <StyledNavLink to="/">Pharmacies</StyledNavLink>
+                        <StyledNavLink to="/cart">Shopping cart</StyledNavLink>
                     </NavStyled>
                 </HeaderStyled>
             </Container>

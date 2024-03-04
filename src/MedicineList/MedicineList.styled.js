@@ -14,6 +14,7 @@ export const MedicineListStyled = styled.ul`
     padding: 12px;
     flex-wrap: wrap;
     height: 372px;
+    width: 100%;
     overflow-y: auto;
     border: 1px solid var(--color-button-hover);
     border-radius: 14px;

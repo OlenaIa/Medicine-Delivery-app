@@ -11,5 +11,5 @@ export const selectBasket = state => state.shoppingCart.basket;
 
 // --------------- FILTER -----------------
 
-export const selectFilter = state => state.filter.filter;
+export const selectSort = state => state.filter.sort;
 export const selectFilterMedicineByShop = state => state.filter.filterMedicineByShop;

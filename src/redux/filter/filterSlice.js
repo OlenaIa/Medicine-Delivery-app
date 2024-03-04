@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const filterInitialState = {
-    filter: null,
+    sort: null,
     filterMedicineByShop: [],
 };
 
@@ -9,8 +9,9 @@ export const filterSlice = createSlice({
     name: 'filter',
     initialState: filterInitialState,
     reducers: {
-        filterSet(state, { payload }) {
-            state.filter = payload;
+        sortSet(state, { payload }) {
+            console.log('payload sort',payload);
+            state.sort = payload;
         },
         filterDelete(state, { payload }) {
             state.filter = null;
@@ -23,4 +24,4 @@ export const filterSlice = createSlice({
 
 export const filterReducer = filterSlice.reducer;
 
-export const { filterSet, filterDelete, filterMedicineByShopSet} = filterSlice.actions;
+export const { sortSet, filterDelete, filterMedicineByShopSet} = filterSlice.actions;
