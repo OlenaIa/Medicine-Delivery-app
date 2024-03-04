@@ -9,7 +9,6 @@ import { Button, PharmacyBlock, PharmacyItem, PharmacyListStyled } from "./Pharm
 export const PharmacyList = () => {
     const dispatch = useDispatch();
     const allMedicines = useSelector(selectAllMedicines);
-    console.log('allMedicines', allMedicines);
 
     useEffect(() => {
         dispatch(getAllMedicinesThunk())
@@ -24,7 +23,7 @@ export const PharmacyList = () => {
 
     return (
         <PharmacyBlock>
-            <h2>Pharmacy</h2>
+            <h2>Pharmacies</h2>
             <PharmacyListStyled>
                 {uniquePharmacies?.length > 0 && uniquePharmacies.map(pharmacy =>
                     <PharmacyItem key={generateID()} onClick={() => onClickPharmacy(pharmacy)}>

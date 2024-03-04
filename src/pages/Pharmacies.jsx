@@ -6,24 +6,23 @@ import { useSelector } from "react-redux";
 import { selectFilterMedicineByShop } from "../redux/selectors";
 
 const Pharmacies = () => {
-        const filterMedicineByShop = useSelector(selectFilterMedicineByShop);
+    const filterMedicineByShop = useSelector(selectFilterMedicineByShop);
 
     return (
         <>
             <Section>
-                <Container $top='50px'>
+                <Container>
                     {filterMedicineByShop.length !== 0 && <Filters />}
                 </Container>
             </Section>
             <Section>
-                <Container $top='50px'>
+                <Container>
                     <PharmacyMedicineWrap>
-                <PharmacyList />
-                <MedicineList/>
-            </PharmacyMedicineWrap>
+                        <PharmacyList />
+                        <MedicineList />
+                    </PharmacyMedicineWrap>
                 </Container>
             </Section>
-            
         </>
     )
 };

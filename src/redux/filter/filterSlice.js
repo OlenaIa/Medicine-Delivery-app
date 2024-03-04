@@ -10,7 +10,6 @@ export const filterSlice = createSlice({
     initialState: filterInitialState,
     reducers: {
         sortSet(state, { payload }) {
-            console.log('payload sort',payload);
             state.sort = payload;
         },
         filterDelete(state, { payload }) {

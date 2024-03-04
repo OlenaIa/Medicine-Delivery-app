@@ -45,7 +45,7 @@ export const StyledNavLink = styled(NavLink)`
   color: var(--color-text-main);
 
   &.active {
-    color: var(--color-text-loadmore-hover);
+    color: var(--color-button);
   }
 `;
 

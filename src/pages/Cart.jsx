@@ -9,7 +9,7 @@ import { FormCartWrap } from "components/Form/Form.styled";
 import { Counter } from "components/Counter/Counter";
 import { Button } from "components/PharmacyList/PharmacyList.styled";
 import { useState } from "react";
-import { options, postOrder, postOrderThunk } from "../redux/shoppingCart/orderThank";
+import { options, postOrder } from "../redux/shoppingCart/orderThank";
 import { resetShoppingCart } from "../redux/shoppingCart/shoppingCartSlice";
 import { Notify } from "notiflix";
 
@@ -18,18 +18,17 @@ const Cart = () => {
     const inBasket = useSelector(selectBasket);
     const [user, setUser] = useState(null);
 
-        const totalPrice = inBasket?.reduce(
-  (accumulator, currentValue) => accumulator + (currentValue.price * currentValue.quantity),
-            0,);
+    const totalPrice = inBasket?.reduce(
+        (accumulator, currentValue) => accumulator + (currentValue.price * currentValue.quantity),
+        0,);
 
     const returnUser = (user) => {
-        console.log('user', user);
         setUser(user)
     }
     
     const onClickSubmit = () => {
         const { name, email, tel, address } = user;
-        if (name === ''|| email === '' || tel === '' || address === '') {
+        if (name === '' || email === '' || tel === '' || address === '') {
             Notify.failure(`Please, fill in all fields of the form`, options);
             return;
         }
@@ -38,9 +37,7 @@ const Cart = () => {
             user,
             createDate: new Date()
         };
-                console.log('newOrder', newOrder);
-postOrder(newOrder)
-        // dispatch(postOrderThunk(newOrder))
+        postOrder(newOrder)
         resetOrder();
     }
 
@@ -64,15 +61,14 @@ postOrder(newOrder)
                                 )}
                             </MedicineListStyled>
                             <h2>Total price: {totalPrice} €</h2>
-                                          <Button type="submit" onClick={onClickSubmit}>Submit</Button>
-
+                            <Button type="submit" onClick={onClickSubmit}>Submit</Button>
                         </CartPriceWrap> :
                         <MedicineListStyled>
                             <EmptyPage>
-                            <p>
-                                Please, select medicine from <Link to="/">Pharmacies</Link> page!
-                            </p>
-                        </EmptyPage>
+                                <p>
+                                    Please, select medicine on <Link to="/">Pharmacies</Link> page!
+                                </p>
+                            </EmptyPage>
                         </MedicineListStyled>}
                 </FormCartWrap>
             </Container>

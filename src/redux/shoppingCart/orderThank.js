@@ -14,12 +14,12 @@ export const options = {
 export const postOrder = async (order, thunkAPI) => {
     try {
         const response = await axios.post('/order', order);
-        Notify.success(`Order ${response.data.user.name} added successfully`, options);
-        console.log('response.data', response.data);
+        Notify.success(`${response.data.user.name}, your order added successfully`, options);
+        console.log('response.data from postOrder =>', response.data);
         return response.data;
     }
     catch (e) {
-        Notify.failure(`Sorry , your order doesn't add with error: "${e.message}"`, options);
+        Notify.failure(`Sorry, your order wasn't added. Error: "${e.message}"`, options);
         return thunkAPI.rejectWithValue(e.message);
     }
 };

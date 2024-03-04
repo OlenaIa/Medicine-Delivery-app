@@ -38,54 +38,15 @@ export const EmptyPage = styled.div`
   margin: 0 auto;
 `;
 
-export const WelcomeWrap = styled.div`
-  display: flex;
-  height: 100vh;
-  margin-right: auto;
-  padding: 15px 0px;
-  font-weight: 600;
-  font-size: 22px;
-  color: var(--color-text-main);
-  
-  @media screen and (min-width: 768px) {
-    font-size: 30px;
-    padding: 20px 0px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    font-size: 40px;
-  }
-`;
-
-export const Welcome = styled.div`
-  display: block;
-  height: 149px;
-  padding: 25px;
-  color: var(--color-text-main);
-  background-color: rgba(255,255,255,0.5);
-  border-radius: 30px;
-  
-  @media screen and (min-width: 768px) {
-    border-radius: 40px;
-    height: 150px;
-    padding: 30px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    padding: 40px;
-    height: 200px;
-  }
-`;
-
 export const PharmacyMedicineWrap = styled.div`
   display: flex;
   gap: 20px;
   justify-content: center;
-  `;
+`;
 
 export const CartPriceWrap = styled.div`
-display: flex;
-flex-direction: column;
-gap: 20px;
-align-items: end;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: end;
 `;

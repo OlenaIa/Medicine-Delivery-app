@@ -28,7 +28,7 @@ export const shoppingCartSlice = createSlice({
             };
         },
         resetShoppingCart(state, _) {
-state.basket = []
+            state.basket = []
         }
     },
     extraReducers: builder => {
@@ -44,8 +44,8 @@ state.basket = []
             })
             .addCase(postOrderThunk.rejected, (state, { payload }) => {
                 state.isLoading = false;
-    state.error = payload;
-    })
+                state.error = payload;
+            })
     }
 });
 

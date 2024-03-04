@@ -1,5 +1,4 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit'
-import { makeUniqueBrandsState } from 'service/serviceFunc';
 import { getAllMedicinesThunk } from './medicineThanks';
 
 const medicinesInitialState = {
@@ -34,7 +33,6 @@ const medicinesSlice = createSlice({
             .addCase(getAllMedicinesThunk.fulfilled, (state, { payload }) => {
                 state.isLoading = false;
                 state.allMedicines = payload;
-                // state.carsBrands = makeUniqueBrandsState(payload);
                 state.error = null;
             })
             .addMatcher(isAnyOf(...addStatusToActs('pending')), onPending)

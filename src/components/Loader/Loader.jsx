@@ -4,7 +4,7 @@ import { WrapperLoader } from "./Loader.styled";
 export const Loader = () => (
   <WrapperLoader>
     <RotatingLines
-      strokeColor="#3470FF"
+      strokeColor="#136d40"
       strokeWidth="5"
       animationDuration="1.2"
       width="96"

@@ -5,7 +5,7 @@ const Footer = () => {
         <FooterStyle>
             <p>by </p>
             <LinkStyle href="https://github.com/OlenaIa" target="_blank">
-                 Olena Iankovska
+                Olena Iankovska
             </LinkStyle>
         </FooterStyle>
     )

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { UserForm, LabelForm, InputForm } from "./Form.styled"
 
-export const Form = ({returnUser, user}) => {
+export const Form = ({ returnUser, user }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [tel, setTel] = useState('');
@@ -11,8 +11,8 @@ export const Form = ({returnUser, user}) => {
         if (user) {
             return;
         }
-    resetUser()
-    }, [user])
+        resetUser()
+    }, [user]);
 
     const onChangeForm = (e) => {
         const { value } = e.target;
@@ -32,7 +32,7 @@ export const Form = ({returnUser, user}) => {
             default:
                 break;
         }
-        returnUser({name, email, tel, address})
+        returnUser({ name, email, tel, address })
     };
 
     const resetUser = () => {

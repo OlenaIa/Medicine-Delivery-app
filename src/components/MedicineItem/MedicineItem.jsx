@@ -8,12 +8,12 @@ import { selectBasket } from "../../redux/selectors";
 
 export const MedicineItem = ({ drug, children }) => {
     const dispatch = useDispatch();
-        const inBasket = useSelector(selectBasket);
+    const inBasket = useSelector(selectBasket);
 
     const { img, medicine, description, price, id } = drug;
     const [inCart, setInCart] = useState(false);
 
-      useEffect(() => {
+    useEffect(() => {
         if (inBasket?.some(item => item.id === id)) {
             setInCart(true);
         } else { setInCart(false) }
@@ -26,20 +26,20 @@ export const MedicineItem = ({ drug, children }) => {
     };
 
     return (
-                    <MedicineItemStyle>
-                    <Img src={img ?
-                        img :
-                        'https://www.braasco.com//ASSETS/IMAGES/ITEMS/ZOOM/no_image.jpeg'}
-                        alt={medicine} />
+        <MedicineItemStyle>
+            <Img src={img ?
+                img :
+                'https://www.braasco.com//ASSETS/IMAGES/ITEMS/ZOOM/no_image.jpeg'}
+                alt={medicine} />
             <DescriptionWrap>
                 <h3>{medicine}</h3>
                 <p>{description}</p>
             </DescriptionWrap>
             <PriceQuantityWrap>
                 <Price>{price} €</Price>
-                            {children}
+                {children}
             </PriceQuantityWrap>
             <Button onClick={onClickCard}>{inCart ? 'Delete from Cart' : 'Add to Cart'}</Button>
-                    </MedicineItemStyle>
+        </MedicineItemStyle>
     )
 };

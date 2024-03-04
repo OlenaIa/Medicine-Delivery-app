@@ -7,7 +7,7 @@ export const Counter = ({ drug }) => {
 
     const onChangeQuantity = (e) => {
         dispatch(updateShoppingCart({ quantity: parseInt(e.target.value), id: drug.id }))
-    }
+    };
 
     return (
         <InputQuantity

@@ -9,7 +9,7 @@ export const selectError = state => state.medicines.error;
 
 export const selectBasket = state => state.shoppingCart.basket;
 
-// --------------- FILTER -----------------
+// --------------- filter -----------------
 
 export const selectSort = state => state.filter.sort;
 export const selectFilterMedicineByShop = state => state.filter.filterMedicineByShop;

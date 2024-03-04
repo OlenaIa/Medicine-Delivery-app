@@ -6,7 +6,6 @@ import { EmptyPage } from "pages/Page.styled";
 
 export const MedicineList = () => {
     const filterMedicineByShop = useSelector(selectFilterMedicineByShop);
-    console.log('filterMedicineByShop', filterMedicineByShop);
     const { pharmacy } = filterMedicineByShop[0] || '';
     const sortMethod = useSelector(selectSort);
 
@@ -14,12 +13,10 @@ export const MedicineList = () => {
 
     if (sortMethod?.value === 'price') {
         visibleMedicines.sort((a, b) => a.price - b.price)
-        console.log('sortMedicine', visibleMedicines);
     }
 
     if (sortMethod?.value === 'alphabet') {
         visibleMedicines.sort((a, b) => a.medicine.localeCompare(b.medicine))
-        console.log('sortMedicine', visibleMedicines);
     }
 
     if (sortMethod?.value === 'all') {
@@ -37,10 +34,10 @@ export const MedicineList = () => {
                     </MedicineListStyled>
                 </> :
                 <MedicineListStyled>
-                <EmptyPage>
-                            <p>Please, select pharmacy.</p>
+                    <EmptyPage>
+                        <p>Please, select pharmacy.</p>
                     </EmptyPage>
-                    </MedicineListStyled>
+                </MedicineListStyled>
             }
         </MedicineBlock>
     )
